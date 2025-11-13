@@ -1,9 +1,9 @@
-/** @type {import('postcss-load-config').Config} */
-const config = {
-  plugins: [
-    require('@tailwindcss/postcss'),
-    require('autoprefixer'),
-    require('postcss-pxtorem')({
+// postcss.config.js
+module.exports = {
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+    'postcss-pxtorem': {
       rootValue: 16,
       unitPrecision: 5,
       propList: ['*'],
@@ -11,8 +11,6 @@ const config = {
       replace: true,
       mediaQuery: false,
       exclude: /node_modules/i,
-    }),
-  ],
+    },
+  },
 }
-
-module.exports = config
