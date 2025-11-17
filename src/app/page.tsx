@@ -8,7 +8,7 @@ import ContactComponent from '@/core/components/contact/contact.component'
 
 export default function Home() {
   return (
-    <div className='text-dark font-sans'>
+    <div className='font-sans text-dark'>
       <HeaderComponent />
       <main className="mx-auto max-w-6xl bg-[url('/img/bg.png')] bg-contain bg-top bg-no-repeat px-6 py-10">
         <HeroComponent />

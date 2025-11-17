@@ -29,18 +29,12 @@ export const frontendSkills: TechItem[] = [
     label: 'SCSS / SASS',
   },
   { src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gulp/gulp-plain.svg', label: 'Gulp' },
-]
-
-export const apiSkills: TechItem[] = [
   {
     src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg',
     label: 'GraphQL',
   },
   { src: '/img/apollo-client.svg', label: 'Apollo Client' },
   { src: '/img/tanstack.png', label: 'TanStack Query' },
-]
-
-export const toolsSkills: TechItem[] = [
   {
     src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg',
     label: 'Figma',
@@ -66,3 +60,7 @@ export const toolsSkills: TechItem[] = [
     label: 'Windows',
   },
 ]
+
+export const apiSkills: TechItem[] = []
+
+export const toolsSkills: TechItem[] = []

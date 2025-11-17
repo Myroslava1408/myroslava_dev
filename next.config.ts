@@ -2,6 +2,10 @@ import type { NextConfig } from 'next'
 
 const nextConfig: NextConfig = {
   webpack: (config, { dev, isServer }) => {
+    config.module.rules.push({
+      test: /\.(glb|gltf|png|jpg|jpeg|svg)$/,
+      type: 'asset/resource',
+    })
     return config
   },
   images: {
@@ -14,10 +18,7 @@ const nextConfig: NextConfig = {
       'www.svgrepo.com',
     ],
   },
-  reactCompiler: true,
-  experimental: {
-    // turbo: false // більше не підтримується
-  },
+  experimental: {},
 }
 
 export default nextConfig
