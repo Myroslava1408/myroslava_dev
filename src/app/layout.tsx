@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import StarCursor from '@/core/shared/star-cursor/star-cursor.component'
 
 export const metadata: Metadata = {
   title: 'Myroslava Yatsuk – Front-End Developer',
@@ -15,7 +16,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='en'>
-      <body className='font-geistSans antialiased'>{children}</body>
+      <body className='font-geistSans antialiased'>
+        <StarCursor />
+        {children}
+      </body>
     </html>
   )
 }
