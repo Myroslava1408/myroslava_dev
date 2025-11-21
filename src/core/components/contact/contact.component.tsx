@@ -2,8 +2,22 @@
 
 import { FC } from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
+import { motion } from 'framer-motion'
 import { contactData } from './contactData'
+
+const containerVariants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.2,
+    },
+  },
+}
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+}
 
 const ContactComponent: FC = () => {
   return (
@@ -11,15 +25,30 @@ const ContactComponent: FC = () => {
       id='contact'
       className='md: mx-auto max-w-6xl px-6 py-14 text-center max-md:scroll-mt-[100px]'
     >
-      <h2 className='text-dark mb-10 text-[35px] font-semibold'>
+      <motion.h2
+        className='mb-10 text-[35px] font-semibold text-dark'
+        initial={{ opacity: 0, y: -30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
         Contact <span className='text-primary'>Me</span>
-      </h2>
-      <div className='max-laptop:flex-col flex w-full flex-row flex-wrap justify-center gap-10 md:justify-between'>
+      </motion.h2>
+
+      <motion.div
+        className='max-laptop:flex-col flex w-full flex-row flex-wrap justify-center gap-10 md:justify-between'
+        variants={containerVariants}
+        initial='hidden'
+        whileInView='show'
+        viewport={{ once: true }}
+      >
         {contactData.map((contact, idx) => (
-          <Link
+          <motion.a
             key={idx}
             href={contact.href}
-            className='flex flex-col items-center transition hover:opacity-80'
+            className='flex flex-col items-center transition'
+            variants={itemVariants}
+            whileHover={{ scale: 1.05 }}
           >
             <div className='relative h-[160px] w-[166px]'>
               <div className='absolute'>
@@ -36,9 +65,9 @@ const ContactComponent: FC = () => {
               </div>
             </div>
             <span className='mt-2 text-xl font-medium'>{contact.label}</span>
-          </Link>
+          </motion.a>
         ))}
-      </div>
+      </motion.div>
     </section>
   )
 }

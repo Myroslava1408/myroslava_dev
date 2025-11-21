@@ -3,41 +3,31 @@
 import { FC } from 'react'
 import Image from 'next/image'
 import { frontendSkills, apiSkills, toolsSkills } from './skillsData'
+import { motion } from 'framer-motion'
 import { DomeGallery } from '@/core/shared/dome-gallery'
 
 const SkillsComponent: FC = () => {
   return (
     <section id='skills' className='mx-auto max-w-6xl px-6 py-14 max-md:scroll-mt-[100px]'>
-      <h2 className='text-center text-[35px] font-semibold text-dark'>
+      <motion.h2
+        className='text-center text-[35px] font-semibold text-dark'
+        initial={{ opacity: 0, y: -30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8 }}
+      >
         Technical <span className='text-primary'>Skills</span>
-      </h2>
-      <div className={'max-laptop:h-[55vh] m-auto h-[72vh] w-auto'}>
+      </motion.h2>
+
+      <motion.div
+        className={'max-laptop:h-[55vh] m-auto mt-10 h-[72vh] w-auto'}
+        initial={{ opacity: 0, y: 50 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.8, delay: 0.3 }}
+      >
         <DomeGallery />
-      </div>
-
-      {/*<div className='grid gap-6 md:grid-cols-3'>*/}
-      {/*  /!* Frontend *!/*/}
-      {/*  <SkillCard*/}
-      {/*    title='Frontend'*/}
-      {/*    icon='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg'*/}
-      {/*    skills={frontendSkills}*/}
-      {/*    extra='⚡ Optimization of page speed'*/}
-      {/*  />*/}
-
-      {/*  /!* API & Data *!/*/}
-      {/*  <SkillCard*/}
-      {/*    title='API & Data'*/}
-      {/*    icon='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg'*/}
-      {/*    skills={apiSkills}*/}
-      {/*  />*/}
-
-      {/*  /!* Tools & Environments *!/*/}
-      {/*  <SkillCard*/}
-      {/*    title='Tools & Environments'*/}
-      {/*    icon='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg'*/}
-      {/*    skills={toolsSkills}*/}
-      {/*  />*/}
-      {/*</div>*/}
+      </motion.div>
     </section>
   )
 }
