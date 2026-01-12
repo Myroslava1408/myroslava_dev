@@ -29,7 +29,7 @@ const HeroComponent: FC = () => {
           that look and perform better than expected.
         </p>
         <a
-          href='/СV_Myroslava Yatsuk_Frontend_developer.pdf'
+          href='/Myroslava_Yatsuk_Frontend_CV.pdf'
           download
           className='mt-6 inline-block rounded-lg bg-primary px-6 py-3 text-white transition-colors hover:bg-primary/90'
         >
